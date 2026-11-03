@@ -16,6 +16,7 @@ export type Audience = {
   permissions: string[];
   limits: string[];
   extraId?: string;
+  screens?: { src: string; alt: string; caption: string }[];
 };
 
 export const audiences: Record<string, Audience> = {
@@ -44,6 +45,7 @@ export const audiences: Record<string, Audience> = {
     helps: [
       { name: "Safe zones for home and familiar places", detail: "Alerts when the usual routine breaks, not every time they step out.", status: "launch" },
       { name: "I'm Safe check-in", detail: "One tap tells the family they're fine.", status: "launch" },
+      { name: "Medicine Care", detail: "Medicine schedules and reminders; the family sees doses taken, missed or needing attention.", status: "launch" },
       { name: "SOS", detail: "Hold for 3 seconds to alert the circle, with one-tap access to call 112.", status: "launch" },
       { name: "Hermes AI deviation detection", detail: "Learns a normal day and flags real deviations.", status: "launch" },
       { name: "NISCHINT wearable", detail: "For parents who don't always carry a phone.", status: "planned" },
@@ -57,6 +59,10 @@ export const audiences: Record<string, Audience> = {
       "Their phone needs battery, signal and location access for alerts to work.",
       "NISCHINT doesn't detect falls or medical emergencies today.",
       "It doesn't contact a doctor, ambulance or police. You or another guardian decide what to do.",
+    ],
+    screens: [
+      { src: "/app-screens/medicine-care.jpg", alt: "NISCHINT Medicine Care screen for a senior, showing today's medicines and schedules", caption: "Medicine Care: today's doses and schedules." },
+      { src: "/app-screens/safety-zones.jpg", alt: "NISCHINT Safety Management screen with safe zones for a protected member", caption: "Safe zones for home and familiar places." },
     ],
   },
   women: {
@@ -98,6 +104,11 @@ export const audiences: Record<string, Audience> = {
       "If your phone is off, out of battery or offline, alerts may be delayed or not sent.",
       "NISCHINT does not contact police for you. In an emergency, call 112.",
     ],
+    screens: [
+      { src: "/app-screens/my-protection.jpg", alt: "NISCHINT My Protection screen with the I'm Safe button", caption: "One tap: I'm Safe." },
+      { src: "/app-screens/safe-walk.jpg", alt: "NISCHINT Safe Walk screen, ready to start, with destination and safe route map", caption: "Start a Safe Walk with your destination." },
+      { src: "/app-screens/safe-walk-live.jpg", alt: "NISCHINT Safe Walk in progress, live on a map with ETA", caption: "Your circle follows until you arrive." },
+    ],
     extraId: "route-check",
   },
   child: {
@@ -137,6 +148,10 @@ export const audiences: Record<string, Audience> = {
       "It is not a replacement for adult supervision or school safety procedures.",
       "It does not contact police or ambulance. In an emergency, call 112.",
     ],
+    screens: [
+      { src: "/app-screens/child-routes.jpg", alt: "NISCHINT My Routes screen for a child, with a guardian-monitored home-to-school route", caption: "Guardian-monitored routes, like home to school." },
+      { src: "/app-screens/alert-center.jpg", alt: "NISCHINT Alert Center showing a missed safety check from a child", caption: "A missed check-in reaches the guardian." },
+    ],
   },
   nri: {
     slug: "nri",
@@ -174,6 +189,10 @@ export const audiences: Record<string, Audience> = {
       "From abroad you can't reach a scene quickly. Add at least one guardian who lives nearby.",
       "Alerts depend on your parent's phone having battery, signal and location access.",
       "NISCHINT does not contact emergency services. In India, call 112.",
+    ],
+    screens: [
+      { src: "/app-screens/home.jpg", alt: "NISCHINT home screen with family safety score", caption: "The whole family's status at a glance." },
+      { src: "/app-screens/family-circle.jpg", alt: "NISCHINT Family Circle with primary guardian, co-guardian and protected member", caption: "Guardians in India and abroad, in one circle." },
     ],
   },
 };

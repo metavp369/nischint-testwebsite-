@@ -4,6 +4,7 @@ import { Section, SectionHeading, StatusBadge } from "@/components/ui";
 import { technologyRows } from "@/content/features";
 import type { Status } from "@/content/site";
 import { FinalCta } from "@/components/home/Convert";
+import { AppScreen } from "@/components/media";
 
 export const metadata: Metadata = {
   title: "Technology & wearable: what's ready and what's planned",
@@ -71,6 +72,22 @@ export default function Page() {
           </div>
         </Section>
       ))}
+      <Section labelledBy="controls-title" tone="cream">
+        <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
+          <div>
+            <SectionHeading
+              id="controls-title"
+              eyebrow="You stay in control"
+              title="Monitoring you can see and switch"
+              intro="The Protection Center shows exactly which monitoring is on (AI safety, location and microphone) and lets it be switched on or off, so nothing runs without the family knowing."
+              className="!mb-0"
+            />
+          </div>
+          <div className="mx-auto w-full max-w-[260px]">
+            <AppScreen src="/app-screens/protection-center.jpg" alt="NISCHINT Protection Center with monitoring controls for AI safety, location and microphone" />
+          </div>
+        </div>
+      </Section>
       <FinalCta />
     </>
   );

@@ -91,13 +91,13 @@ export function AppScreen({
   if (exists(src)) {
     return (
       <div className={frame}>
-        <Image src={src} alt={alt} width={390} height={844} priority={priority} sizes="320px" className="h-auto w-full rounded-[1.5rem]" />
+        <Image src={src} alt={alt} width={390} height={794} priority={priority} sizes="320px" className="h-auto w-full rounded-[1.5rem]" />
       </div>
     );
   }
   return (
     <div className={frame} role="img" aria-label={alt}>
-      <div className="flex aspect-[390/780] flex-col items-center justify-center gap-3 rounded-[1.5rem] bg-calm p-6 text-center">
+      <div className="flex aspect-[390/794] flex-col items-center justify-center gap-3 rounded-[1.5rem] bg-calm p-6 text-center">
         <Image src="/brand/nischint-shield.png" alt="" width={56} height={61} />
         <p className="text-sm font-semibold text-navy">App screenshot</p>
         <p className="text-xs text-ink-muted">

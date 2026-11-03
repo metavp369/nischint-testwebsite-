@@ -69,7 +69,7 @@ From the brand book: **calm Caregiver with a Sage's head.** Airy, light, documen
 | Government disaster warnings (SACHET) | Home | In testing | Small group only |
 | Weather forecasts for saved places | Home | In testing | |
 | Air quality (CPCB) | Home | Coming soon | |
-| Sensing: voice, health, movement, environment, behaviour | Home ("read continuously") | **Planned (AI Guardian sensor-assisted check-ins)** | Brief forbids presenting unverified AI incident recognition as launched; needs product confirmation of which signals ship at launch |
+| AI Safety Monitoring, microphone monitoring (member-managed), Medicine Care | App screens; confirmed live by the team 3 Nov 2026 | At launch | Other sensing (vitals, behaviour) not claimed |
 | NISCHINT wearable | /plans ("planned add-on") | Planned | Price not published |
 | Fall detection | Not on site | Not mentioned | Concept only |
 | Nischint Saathi volunteers in app | /plans, /trust-and-safety | Coming later | Not live; Foundation runs the programme separately |

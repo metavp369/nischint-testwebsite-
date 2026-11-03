@@ -83,7 +83,7 @@ export function Hero() {
             </p>
           </div>
           <div className="absolute -bottom-8 -right-2 w-[112px] sm:-right-8 sm:w-[180px]">
-            <AppScreen src="/app-screens/hero-phone-alert.jpg" alt="NISCHINT app, Alert Center screen (design preview)" priority />
+            <AppScreen src="/app-screens/home.jpg" alt="NISCHINT app home screen: family safety score, AI Safety Monitoring active, and live location" priority />
           </div>
           <p className="mt-12 text-right text-xs text-ink-muted sm:mt-4">App design preview with demo data. It may look different at launch.</p>
         </div>

@@ -13,8 +13,7 @@ It implements all 18 parameters of the "Ultimate Master Prompt" brief and the Ni
 ## Before you go live: launch blockers
 
 1. **Legal pages.** `/privacy`, `/terms`, `/dpdp-consent`, `/delete-account` and `/law-enforcement-guidelines` currently show a "being moved" notice (and are `noindex`). Paste the approved text from the current live site into each page in `src/app/<page>/page.tsx` (or into Markdown files rendered there). The legal text was not rewritten here.
-2. **App screenshots.** Copy these files from the current site into `public/app-screens/` (same names):
-   `hero-phone-alert.jpg`, `alert-center.jpg` (from `/hero/` and `/screens/` on the live site). Until then a labelled placeholder shows.
+2. ~~App screenshots~~ Done (3 Nov 2026): 11 real app screens (demo data) are in `public/app-screens/`.
 3. **Photography.** Add approved photos to `public/images/` (filenames and briefs are shown on each placeholder, and listed in `docs/04-CONTENT-GUIDE.md`). Leadership portraits go in `public/images/team/`.
 4. **Forms.** Set `FORMS_WEBHOOK_URL` or Resend variables (see `.env.example`). Without them, forms honestly say they aren't connected.
 5. **Sign-off** on `docs/03-UNVERIFIED-CLAIMS.md`.

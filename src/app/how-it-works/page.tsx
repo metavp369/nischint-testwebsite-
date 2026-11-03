@@ -15,6 +15,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works" },
 };
 
+const appScreens = [
+  { src: "/app-screens/home.jpg", alt: "NISCHINT home screen with family safety score and AI Safety Monitoring status", caption: "Home: your family's safety at a glance." },
+  { src: "/app-screens/sos.jpg", alt: "NISCHINT SOS screen: I NEED HELP, with I'm Safe and Safe Walk buttons", caption: "SOS: hold to alert your circle, or tap I'm Safe." },
+  { src: "/app-screens/alert-center.jpg", alt: "NISCHINT Alert Center with emergency, warning and info alerts", caption: "Alert Center: active and resolved alerts." },
+  { src: "/app-screens/family-circle.jpg", alt: "NISCHINT Family Circle showing guardians and a protected member", caption: "Family Circle: who protects whom." },
+  { src: "/app-screens/safety-zones.jpg", alt: "NISCHINT Safety Management screen with safe zones", caption: "Safety Zones: places that watch themselves." },
+  { src: "/app-screens/safe-walk-live.jpg", alt: "NISCHINT Safe Walk in progress on a live map with ETA", caption: "Safe Walk: your circle follows until you arrive." },
+];
+
 const degraded = [
   { t: "No internet", b: "Alerts can't be sent until the phone reconnects. Keep 112 handy; calls to emergency numbers work without mobile data." },
   { t: "Battery dies", b: "A switched-off phone can't check in or raise alerts. A missed check-in may itself become a warning to your circle." },
@@ -78,17 +87,17 @@ export default function Page() {
       </Section>
 
       <Section labelledBy="screens-title" tone="white">
-        <SectionHeading id="screens-title" eyebrow="Inside the app" title="A look at the app" intro="Design preview with demo data. The app may look different at launch." />
-        <div className="grid justify-items-center gap-10 sm:grid-cols-2">
-          <figure className="w-full max-w-[280px]">
-            <AppScreen src="/app-screens/hero-phone-alert.jpg" alt="NISCHINT app, Alert Center screen" />
-            <figcaption className="mt-4 text-center text-[15px] text-ink-soft">Alert Center: active and resolved alerts in one place.</figcaption>
-          </figure>
-          <figure className="w-full max-w-[280px]">
-            <AppScreen src="/app-screens/alert-center.jpg" alt="NISCHINT app, Alert Center with an SOS emergency card" />
-            <figcaption className="mt-4 text-center text-[15px] text-ink-soft">SOS card with one-tap calling and location for guardians.</figcaption>
-          </figure>
-        </div>
+        <SectionHeading id="screens-title" eyebrow="Inside the app" title="A look at the app" intro="Screens from the NISCHINT app with demo data. The app may look different at launch." />
+        <ul className="grid justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {appScreens.map((s) => (
+            <li key={s.src} data-reveal className="w-full max-w-[260px]">
+              <figure>
+                <AppScreen src={s.src} alt={s.alt} />
+                <figcaption className="mt-4 text-center text-[15px] text-ink-soft">{s.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section labelledBy="degraded-title" tone="cream">

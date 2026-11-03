@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { PageHeader } from "./PageHeader";
-import { PhotoSlot } from "./media";
+import { AppScreen, PhotoSlot } from "./media";
 import { LinkButton, Section, SectionHeading, StatusBadge, accentClasses } from "./ui";
 import { Icon } from "./icons";
 import { FinalCta, Support } from "./home/Convert";
@@ -56,6 +56,22 @@ export function AudiencePage({ a, children }: { a: Audience; children?: React.Re
             </li>
           ))}
         </ul>
+        {a.screens && a.screens.length > 0 && (
+          <div className="mt-14">
+            <h3 className="text-xl font-bold">Inside the app</h3>
+            <p className="mt-1 text-sm text-ink-muted">Screens from the NISCHINT app with demo data. The app may look different at launch.</p>
+            <ul className="mt-8 grid justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {a.screens.map((s) => (
+                <li key={s.src} data-reveal className="w-full max-w-[260px]">
+                  <figure>
+                    <AppScreen src={s.src} alt={s.alt} />
+                    <figcaption className="mt-4 text-center text-[15px] text-ink-soft">{s.caption}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {children}
       </Section>
 

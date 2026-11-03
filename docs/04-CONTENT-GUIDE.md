@@ -46,7 +46,7 @@ Each placeholder on the site shows its brief. Use real people with signed releas
 | `images/child-school-gate.jpg` | Parent waving goodbye at a school gate; backs or side profiles only, no identifiable child faces | 960×1080 |
 | `images/nri-video-call.jpg` | Woman abroad on a video call with her mother in India, both smiling | 960×1080 |
 | `images/team/feroz-shaikh.jpg`, `pravin-arora.jpg`, `lokesh-thada.jpg` | Approved portraits from the current site | 640×800 |
-| `app-screens/hero-phone-alert.jpg`, `app-screens/alert-center.jpg` | Approved app screenshots from the current site. Never redraw or invent screens | 390 wide |
+| `app-screens/*.jpg` (11 files, added 3 Nov 2026) | Real app screens with demo data, cropped without the status bar, 780×1588. To replace one, keep the filename and size. Never redraw or invent screens | 780×1588 |
 
 Compress photos to under ~200 KB (Squoosh or TinyPNG). Next.js serves them as AVIF/WebP automatically. Rebuild after adding files; placeholders switch to the real image at build time.
 

@@ -36,7 +36,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What is available right now?",
-    a: "The apps are not live yet. We are opening city by city, starting with a pilot in Thane, and launching first in Mumbai, Thane, Bengaluru, Delhi and Jaipur. Route Check launches on 26 Nov. Environment alerts are in testing with a small group. The wearable and AI Guardian sensor-assisted check-ins are planned.",
+    a: "The apps are not live yet. We are opening city by city, starting with a pilot in Thane, and launching first in Mumbai, Thane, Bengaluru, Delhi and Jaipur. Route Check launches on 26 Nov. Environment alerts are in testing with a small group. The NISCHINT wearable is planned.",
   },
   {
     q: "How much does it cost?",
