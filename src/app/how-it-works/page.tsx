@@ -41,8 +41,16 @@ export default function Page() {
         eyebrow="How NISCHINT works"
         title="Quiet on normal days. Clear when it matters."
         intro={<p>NISCHINT learns what a normal day looks like and stays quiet through it. When something genuinely needs attention, the people you trust hear about it, and a person always decides what happens next.</p>}
+        aside={
+          <div className="mx-auto w-full max-w-[280px]">
+            <AppScreen src="/app-screens/alert-center.jpg" alt="NISCHINT Alert Center showing emergency, warning and info alerts" priority />
+          </div>
+        }
       >
-        <LinkButton href="/thane#waitlist">Join the waitlist</LinkButton>
+        <LinkButton href="#app-screens">See the app screens</LinkButton>
+        <LinkButton href="/thane#waitlist" variant="secondary">
+          Join the waitlist
+        </LinkButton>
       </PageHeader>
 
       <Solution />
@@ -86,7 +94,7 @@ export default function Page() {
         <p className="mt-4 text-sm text-ink-muted">A missed check-in becomes a warning; an SOS becomes an escalation, with one-tap calling and location for your guardians.</p>
       </Section>
 
-      <Section labelledBy="screens-title" tone="white">
+      <Section id="app-screens" labelledBy="screens-title" tone="white">
         <SectionHeading id="screens-title" eyebrow="Inside the app" title="A look at the app" intro="Screens from the NISCHINT app with demo data. The app may look different at launch." />
         <ul className="grid justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {appScreens.map((s) => (
