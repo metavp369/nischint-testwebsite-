@@ -71,7 +71,7 @@ export const audiences: Record<string, Audience> = {
     crumb: "Women & girls' safety",
     metaTitle: "Women's safety app for commutes and late journeys",
     metaDescription:
-      "Move through your city on your own terms. NISCHINT Route Check, Safe Walk, I'm Safe check-ins and SOS that alerts the people you trust, without anyone tracking you all day.",
+      "Move through your city on your own terms. NISCHINT Route Check, Safe Walk, I'm Safe check-ins and SOS that alerts the people you trust. Live location is shared only with your consent.",
     eyebrow: "For her",
     title: "Move through your city on your own terms.",
     intro:
