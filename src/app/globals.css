@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* Brand tokens: Nischint Brand Book, 3 Nov 2026 (colours sampled from the logo). */
+@theme {
+  --color-blue: #0a5bd3;
+  --color-blue-dark: #0846a3;
+  --color-blue-tint: #eaf2fd;
+  --color-teal: #1fb89a;
+  --color-teal-text: #0d7462;
+  --color-teal-tint: #e4f7f2;
+  --color-green: #34b53a;
+  --color-green-text: #1e7a2e;
+  --color-green-tint: #e7f6e8;
+  --color-mint: #93ffc1;
+  --color-navy: #062b57;
+  --color-ink-soft: #3d5170;
+  --color-ink-muted: #4a5b70;
+  --color-calm: #f6f9fb;
+  --color-cream: #f5f1e6;
+  --color-line: #e1e9f2;
+  --color-sos: #c62828;
+
+  --font-display: "Manrope Variable", "Manrope", system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-deva: "Noto Sans Devanagari", "Mukta", sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-calm);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection { background: var(--color-mint); color: var(--color-navy); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* Scroll reveal: content is visible by default; JS opts in to the effect. */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* Hero connection arc */
+@keyframes draw-arc {
+  from { stroke-dashoffset: 900; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes travel {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.18); opacity: 0; }
+}
+/* Transform only: text paints immediately, so LCP isn't delayed by a fade. */
+@keyframes rise-in {
+  from { transform: translateY(18px); }
+  to { transform: none; }
+}
+.arc-draw {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-arc 2.2s 0.4s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+}
+.arc-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: soft-pulse 3.2s ease-in-out infinite;
+}
+.hero-rise { animation: rise-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-rise-2 { animation: rise-in 0.9s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-rise-3 { animation: rise-in 0.9s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .arc-draw { stroke-dashoffset: 0; animation: none; }
+  .arc-pulse { animation: none; opacity: 0; }
+  .hero-rise, .hero-rise-2, .hero-rise-3 { animation: none; }
+}
+
+/* FAQ disclosure marker */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-chevron { transform: rotate(180deg); }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; font-size: 12pt; }
+  .print-break { break-inside: avoid; }
+}

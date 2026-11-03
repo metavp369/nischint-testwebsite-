@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import { PageHeader } from "@/components/PageHeader";
+import { LinkButton, Section, SectionHeading } from "@/components/ui";
+import { AppScreen } from "@/components/media";
+import { Icon } from "@/components/icons";
+import { Solution } from "@/components/home/Story";
+import { FaqList, FinalCta } from "@/components/home/Convert";
+import { faqs } from "@/content/faq";
+import { plans } from "@/content/plans";
+
+export const metadata: Metadata = {
+  title: "How NISCHINT works: circles, check-ins, alerts and limits",
+  description:
+    "See exactly how NISCHINT works: choose trusted people, allow permissions, set safe zones or check in, and your circle is alerted. Plus what happens offline and why it doesn't replace 112.",
+  alternates: { canonical: "/how-it-works" },
+};
+
+const degraded = [
+  { t: "No internet", b: "Alerts can't be sent until the phone reconnects. Keep 112 handy; calls to emergency numbers work without mobile data." },
+  { t: "Battery dies", b: "A switched-off phone can't check in or raise alerts. A missed check-in may itself become a warning to your circle." },
+  { t: "Location turned off", b: "Alerts can still reach your circle, but without an accurate location." },
+  { t: "Notifications blocked", b: "Your guardians may not see alerts in time. Ask everyone in the circle to allow NISCHINT notifications." },
+  { t: "Nobody responds", b: "Alerts keep climbing the four levels until someone responds. NISCHINT never calls emergency services itself." },
+];
+
+export default function Page() {
+  return (
+    <>
+      <PageHeader
+        path="/how-it-works"
+        crumb="How it works"
+        eyebrow="How NISCHINT works"
+        title="Quiet on normal days. Clear when it matters."
+        intro={<p>NISCHINT learns what a normal day looks like and stays quiet through it. When something genuinely needs attention, the people you trust hear about it, and a person always decides what happens next.</p>}
+      >
+        <LinkButton href="/thane#waitlist">Join the waitlist</LinkButton>
+      </PageHeader>
+
+      <Solution />
+
+      <Section id="circle" labelledBy="circle-title" tone="white">
+        <SectionHeading id="circle-title" eyebrow="Your trusted circle" title="Who's in the circle, and what they see" />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {plans.map((p) => (
+            <div key={p.id} data-reveal className="rounded-[var(--radius-card)] border border-line bg-calm p-7">
+              <h3 className="text-xl font-bold">{p.name} plan</h3>
+              <p className="mt-2 text-ink-soft">{p.features[0]}</p>
+            </div>
+          ))}
+          <div data-reveal className="rounded-[var(--radius-card)] border border-line bg-calm p-7">
+            <h3 className="text-xl font-bold">What guardians see</h3>
+            <p className="mt-2 text-ink-soft">Check-ins, alerts and what&rsquo;s been acknowledged. Not a live-tracking feed.</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="escalation" labelledBy="esc-title" tone="calm">
+        <SectionHeading
+          id="esc-title"
+          eyebrow="4-level escalation"
+          title="Alerts climb until someone answers"
+          intro="Every alert climbs through four levels, from a gentle check-in with you to notifying your full trusted circle, until someone has responded and you're confirmed safe."
+        />
+        <ol data-reveal className="grid gap-3 sm:grid-cols-4" aria-label="Escalation levels">
+          {[
+            { n: 1, t: "A gentle check-in with you", c: "bg-green-tint text-green-text" },
+            { n: 2, t: "Escalating", c: "bg-teal-tint text-teal-text" },
+            { n: 3, t: "Escalating", c: "bg-blue-tint text-blue-dark" },
+            { n: 4, t: "Your full trusted circle", c: "bg-navy text-white" },
+          ].map((l) => (
+            <li key={l.n} className={`rounded-[var(--radius-card)] p-5 ${l.c}`}>
+              <p className="font-display text-3xl font-extrabold">Level {l.n}</p>
+              <p className="mt-1 font-semibold">{l.t}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-4 text-sm text-ink-muted">A missed check-in becomes a warning; an SOS becomes an escalation, with one-tap calling and location for your guardians.</p>
+      </Section>
+
+      <Section labelledBy="screens-title" tone="white">
+        <SectionHeading id="screens-title" eyebrow="Inside the app" title="A look at the app" intro="Design preview with demo data. The app may look different at launch." />
+        <div className="grid justify-items-center gap-10 sm:grid-cols-2">
+          <figure className="w-full max-w-[280px]">
+            <AppScreen src="/app-screens/hero-phone-alert.jpg" alt="NISCHINT app, Alert Center screen" />
+            <figcaption className="mt-4 text-center text-[15px] text-ink-soft">Alert Center: active and resolved alerts in one place.</figcaption>
+          </figure>
+          <figure className="w-full max-w-[280px]">
+            <AppScreen src="/app-screens/alert-center.jpg" alt="NISCHINT app, Alert Center with an SOS emergency card" />
+            <figcaption className="mt-4 text-center text-[15px] text-ink-soft">SOS card with one-tap calling and location for guardians.</figcaption>
+          </figure>
+        </div>
+      </Section>
+
+      <Section labelledBy="degraded-title" tone="cream">
+        <SectionHeading id="degraded-title" eyebrow="When things go wrong" title="What happens if…" intro="Technology fails sometimes. Here's how NISCHINT behaves, so you can plan around it." />
+        <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {degraded.map((d) => (
+            <li key={d.t} data-reveal className="rounded-[var(--radius-card)] bg-white p-6">
+              <h3 className="flex items-center gap-2 text-lg font-bold">
+                <Icon name="alert" size={20} className="text-[#7a4a00]" />
+                {d.t}
+              </h3>
+              <p className="mt-2 text-[15px] text-ink-soft">{d.b}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section labelledBy="hiw-faq" tone="calm">
+        <SectionHeading id="hiw-faq" title="Common questions" />
+        <FaqList items={faqs.slice(0, 6)} />
+      </Section>
+
+      <FinalCta />
+    </>
+  );
+}
