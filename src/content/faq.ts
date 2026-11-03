@@ -12,7 +12,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "When is my location shared?",
-    a: "There is no live-tracking feed for anyone to watch. Location is shared with your circle as part of an alert or SOS, and during a Safe Walk you start yourself. You control the permissions on your phone.",
+    a: "Only with consent. When a member agrees to share their location, the guardians in their circle can see it live in the app, follow a Safe Walk and see location with any alert or SOS. Location monitoring can be switched off in the Protection Center, and you control location permissions on your phone.",
   },
   {
     q: "What happens without internet or battery?",

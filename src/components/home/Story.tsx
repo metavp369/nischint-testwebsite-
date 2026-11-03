@@ -10,7 +10,7 @@ const benefits: { icon: IconName; title: string; body: string }[] = [
   { icon: "users", title: "A family circle that's connected", body: "The people who matter are in one place, and everyone knows who's been told." },
   { icon: "checkCircle", title: "Check-ins that happen on time", body: "\"Reached safely\" becomes one tap, not a phone call you have to remember." },
   { icon: "message", title: "Clearer communication", body: "When something is off, the right people hear the same thing at the same time." },
-  { icon: "heart", title: "Reassurance, without hovering", body: "No one watches a dot on a map. Quiet on normal days, clear when it matters." },
+  { icon: "heart", title: "Reassurance, without hovering", body: "Location is shared only with consent, and alerts stay quiet on normal days and clear when it matters." },
   { icon: "shield", title: "Safety steps anyone can follow", body: "One tap to check in, one hold for SOS. Simple steps for parents and grandparents too." },
 ];
 

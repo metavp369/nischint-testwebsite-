@@ -43,7 +43,7 @@ export const capabilities: Capability[] = [
     id: "circle",
     title: "Trusted Guardian Circle",
     who: "Anyone who wants the right people to know when it matters.",
-    what: "Choose your guardians. They see check-ins and alerts and what's been acknowledged, without anyone watching a dot on a map.",
+    what: "Choose your guardians. They see check-ins, alerts and what's been acknowledged, and your live location only when you've agreed to share it.",
     status: "launch",
     accent: "navy",
     cta: { label: "How the circle works", href: "/how-it-works#circle" },

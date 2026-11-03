@@ -58,7 +58,7 @@ export default function Page() {
           ))}
           <div data-reveal className="rounded-[var(--radius-card)] border border-line bg-calm p-7">
             <h3 className="text-xl font-bold">What guardians see</h3>
-            <p className="mt-2 text-ink-soft">Check-ins, alerts and what&rsquo;s been acknowledged. Not a live-tracking feed.</p>
+            <p className="mt-2 text-ink-soft">Check-ins, alerts, what&rsquo;s been acknowledged, and live location when the member has agreed to share it.</p>
           </div>
         </div>
       </Section>

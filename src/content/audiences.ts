@@ -53,7 +53,7 @@ export const audiences: Record<string, Audience> = {
     permissions: [
       "Use NISCHINT with your parent's knowledge and agreement. It is built for care, not covert monitoring.",
       "Location and notifications are opt-in and can be switched off at any time.",
-      "Nobody sees a live-tracking feed. Location is shared with an alert or SOS.",
+      "Live location is shared with the family circle only with your parent's consent, and location monitoring can be switched off in the Protection Center.",
     ],
     limits: [
       "Their phone needs battery, signal and location access for alerts to work.",
@@ -85,7 +85,7 @@ export const audiences: Record<string, Audience> = {
     moments: [
       { title: "Every commute, covered", body: "Heading to work, college or across town, NISCHINT notices when a journey takes an unusual turn and checks in." },
       { title: "Night travel, without the worry", body: "Late shift or late train home. If something feels off, the people you trust hear about it right away." },
-      { title: "Alerts that respect you", body: "No live-tracking feed for anyone to watch. Smart alerts reach your chosen contacts only when you might need them." },
+      { title: "Tracking only with your consent", body: "Your circle sees your live location only when you've agreed to share it. Smart alerts reach your chosen contacts when you might need them." },
     ],
     helps: [
       { name: "Route Check", detail: "Compare up to three routes: main roads, help along the way, buses and stations, quiet stretches, places open at that hour.", status: "launch-date" },
@@ -96,8 +96,8 @@ export const audiences: Record<string, Audience> = {
     ],
     permissions: [
       "You choose who is in your circle.",
-      "Location is shared only during a Safe Walk you start, or with an alert or SOS.",
-      "No one, including NISCHINT staff, watches a live map of you.",
+      "Your live location is shared with your circle only with your consent.",
+      "You can see what's being shared, and switch location monitoring off, in the Protection Center.",
     ],
     limits: [
       "Route Check shows what is mapped. It does not rate how safe a road is, and maps can be incomplete. Place data from OpenStreetMap, updated weekly. © OpenStreetMap contributors.",
@@ -183,7 +183,7 @@ export const audiences: Record<string, Audience> = {
     ],
     permissions: [
       "Use NISCHINT with your parents' knowledge and agreement; permissions stay in their control on their phone.",
-      "No live-tracking feed; location is shared with an alert or SOS.",
+      "Live location is shared with the circle only with your parents' consent, and they can switch it off in the Protection Center.",
     ],
     limits: [
       "From abroad you can't reach a scene quickly. Add at least one guardian who lives nearby.",
