@@ -4,6 +4,7 @@ import { Section, SectionHeading, accentClasses } from "../ui";
 import { Icon, type IconName } from "../icons";
 import { problems } from "@/content/stories";
 import { site } from "@/content/site";
+import { AppScreen } from "../media";
 
 /** Parameter 04: outcomes for people, kept separate from feature claims. */
 const benefits: { icon: IconName; title: string; body: string }[] = [
@@ -89,7 +90,8 @@ export function Solution() {
             </li>
           ))}
         </ol>
-        <aside data-reveal aria-labelledby="limits-title" className="self-start rounded-[var(--radius-card)] border border-[#e8d7b0] bg-cream p-6 sm:p-7">
+        <div className="flex flex-col gap-10">
+        <aside data-reveal aria-labelledby="limits-title" className="rounded-[var(--radius-card)] border border-[#e8d7b0] bg-cream p-6 sm:p-7">
           <h3 id="limits-title" className="flex items-center gap-2 text-lg font-bold">
             <Icon name="alert" className="text-[#7a4a00]" /> What technology can&rsquo;t do
           </h3>
@@ -106,6 +108,11 @@ export function Solution() {
             Read the full walkthrough →
           </Link>
         </aside>
+        <figure data-reveal className="mx-auto w-full max-w-[250px]">
+          <AppScreen src="/app-screens/family-circle.jpg" alt="NISCHINT Family Circle: primary guardian, co-guardian and protected member with Call and Track buttons" />
+          <figcaption className="mt-4 text-center text-[15px] text-ink-soft">Your circle in the app: who&rsquo;s told, and who can act.</figcaption>
+        </figure>
+        </div>
       </div>
     </Section>
   );
